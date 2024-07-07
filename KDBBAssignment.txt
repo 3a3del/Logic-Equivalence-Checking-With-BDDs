@@ -1,0 +1,26 @@
+# input vars
+boolean x y z w v
+#
+# define left-hand circuit z1
+eval w1 ((!w)&(!x)&y&(!z))
+eval w2 (w&z)
+eval w3 (v&(!w)&y)
+eval F (w1 + w2 +w3 )
+#
+# define the right-hand circuit z2
+eval w4 ((!w) + (!y) + z)
+eval w5 (y + z + (!w))
+eval w6 (v + w + y)
+eval w7 (w + x + y)
+eval w8 (w + x + (!v)+ (!y)+ (!z))
+eval w9 (v+ (!y)+ (!z)+ w)
+eval G (w4 & w5 & w6& w7& w8& w9 )
+
+# verify if two functions are equivalent
+verify F G
+# XOR F and G to find assignments of the variables
+# that will make the network outputs different
+eval diff F ^ G
+satisfy diff
+# that's it
+quit

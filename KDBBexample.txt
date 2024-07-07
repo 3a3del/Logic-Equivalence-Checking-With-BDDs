@@ -1,0 +1,20 @@
+# input vars
+boolean a b
+#
+# define left-hand circuit z1
+eval w1 !(a+a)
+eval w2 !(b&b)
+eval w3 (w1&w2)
+eval z1 !w3
+#
+# define the right-hand circuit z2
+eval w4 !b
+eval z2 (a+w4)
+# verify if two functions are equivalent
+verify z1 z2
+# XOR z1 and z2 to find assignments of the variables
+# that will make the network outputs different
+eval diff z1 ^ z2
+satisfy diff
+# that's it
+quit
