@@ -13,7 +13,9 @@ So You will see two results. (1) “0 verify failed” It means 𝑧 1 z1 and �
 ![](https://github.com/3a3del/Logic-Equivalence-Checking-With-BDDs/blob/main/temp.png)
 
 **The Answar provieded, GoodLuck!
-#Results
+
+
+# Results
 KBDD: satisfy diff
  - The means that the two gate level network equivalent 'only when'                                                                              
 Variables: x y z w v become
