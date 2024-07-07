@@ -1,0 +1,49 @@
+KBDD Standard output
+KBDD: limit 104857600
+limit is 104857600
+KBDD: # input vars
+KBDD: boolean x y z w v
+KBDD: #
+KBDD: # define left-hand circuit z1
+KBDD: eval w1 ((!w)&(!x)&y&(!z))
+KBDD: eval w2 (w&z)
+KBDD: eval w3 (v&(!w)&y)
+KBDD: eval F (w1 + w2 +w3 )
+KBDD: #
+KBDD: # define the right-hand circuit z2
+KBDD: eval w4 ((!w) + (!y) + z)
+KBDD: eval w5 (y + z + (!w))
+KBDD: eval w6 (v + w + y)
+KBDD: eval w7 (w + x + y)
+KBDD: eval w8 (w + x + (!v)+ (!y)+ (!z))
+KBDD: eval w9 (v+ (!y)+ (!z)+ w)
+KBDD: eval G (w4 & w5 & w6& w7& w8& w9 )
+KBDD: 
+KBDD: # verify if two functions are equivalent
+KBDD: verify F G
+0 verify failed
+KBDD: # XOR F and G to find assignments of the variables
+KBDD: # that will make the network outputs different
+KBDD: eval diff F ^ G
+KBDD: satisfy diff
+Variables: x y z w v
+01101
+10001
+10101
+11000
+KBDD: # that's it
+KBDD: quit
+
+KBDD Standard error
+w1: ((!w)&(!x)&y&(!z)) 
+w2: (w&z) 
+w3: (v&(!w)&y) 
+F: (w1 + w2 +w3 ) 
+w4: ((!w) + (!y) + z) 
+w5: (y + z + (!w)) 
+w6: (v + w + y) 
+w7: (w + x + y) 
+w8: (w + x + (!v)+ (!y)+ (!z)) 
+w9: (v+ (!y)+ (!z)+ w) 
+G: (w4 & w5 & w6& w7& w8& w9 ) 
+diff: F ^ G 
