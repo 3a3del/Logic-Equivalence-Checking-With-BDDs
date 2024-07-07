@@ -11,6 +11,8 @@ Assuming you have read/viewed these tutorial materials, the kbdd script for chec
 So You will see two results. (1) “0 verify failed” It means 𝑧 1 z1 and 𝑧 2 z2 are NOT equivalent. (2) “Variables: a 0” It means inputs < 𝑎 = 0 , 𝑏 = 1 > <a=0,b=1> and < 𝑎 = 0 , 𝑏 = 0 > <a=0,b=0> will make two logic networks have equivalent.                                                                                                    
 # Compare the two logic networks 𝐹 and 𝐺 , each functions of 5 variables ( 𝑣 , 𝑤 , 𝑥 , 𝑦 , 𝑧 ) shown below using kbdd.
 ![](https://github.com/3a3del/Logic-Equivalence-Checking-With-BDDs/blob/main/temp.png)
+
+
 **The Answar provieded, GoodLuck!
   
   
